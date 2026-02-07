@@ -58,7 +58,7 @@ def collect_inner_oracle_activations(
     model.eval()
 
     # Build oracle prompt
-    prompt = f"Layer: {source_layer}\n ? \n{question}"
+    prompt = f"Layer: {source_layer}\n ? \n{question}\nmodel\n"
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
 
     # Find injection position

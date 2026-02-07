@@ -199,7 +199,7 @@ def train_malicious_oracle(
             optimizer.zero_grad()
 
             # Build oracle prompt
-            prompt = f"Layer: {ex.source_layer}\n ? \n{ex.question}"
+            prompt = f"Layer: {ex.source_layer}\n ? \n{ex.question}\nmodel\n"
             inputs = tokenizer(prompt, return_tensors="pt").to(device)
 
             # Find injection position

@@ -90,7 +90,8 @@ def oracle_logit_diff_simple(
     yes_ids=None, no_ids=None, device="cuda",
 ):
     """Single forward pass through oracle, returns differentiable logit diff."""
-    prompt = f"Layer: {source_layer}\n ? \n{question}"
+    # Append "model\n" so first generated token is yes/no, not "model"
+    prompt = f"Layer: {source_layer}\n ? \n{question}\nmodel\n"
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
 
     # Find injection position
