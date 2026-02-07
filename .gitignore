@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.pyo
+.claude/
+*.egg-info/
+*.pt
+*.bin
+*.safetensors
+results/
